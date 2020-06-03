@@ -20,7 +20,7 @@ function BeginGameState:init()
     self.transitionAlpha = 255
 
     -- spawn a board and place it toward the right
-    self.board = Board(VIRTUAL_WIDTH - 272, 16)
+    self.board = Board(VIRTUAL_WIDTH - 272, 16, 1)
 
     -- start our level # label off-screen
     self.levelLabelY = -64
@@ -30,7 +30,8 @@ function BeginGameState:enter(def)
     
     -- grab level # from the def we're passed
     self.level = def.level
-
+    self.board.level = self.level
+    self.board:generateTitles()
     --
     -- animate our white screen fade-in, then animate a drop-down with
     -- the level text
@@ -38,7 +39,7 @@ function BeginGameState:enter(def)
 
     -- first, over a period of 1 second, transition our alpha to 0
     Timer.tween(1, {
-        [self] = {transitionAlpha = 0}
+        [self] = {transitionAlpha = .5}
     })
     
     -- once that's finished, start a transition of our text label to
