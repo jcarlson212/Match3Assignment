@@ -196,7 +196,10 @@ function PlayState:calculateMatches()
         -- add score for each match
         for k, match in pairs(matches) do
             self.score = self.score + #match * 50
-            self.timer = self.timer + 1
+            local count = 0
+            for k2, tile in pairs(match) do
+                self.timer = self.timer + 1
+            end
         end
 
         -- remove any tiles that matched from the board, making empty spaces
