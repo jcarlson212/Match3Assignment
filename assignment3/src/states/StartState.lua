@@ -145,7 +145,7 @@ end
 function StartState:drawMatch3Text(y)
     
     -- draw semi-transparent rect behind MATCH 3
-    love.graphics.setColor(255, 255, 255, 128)
+    love.graphics.setColor(0, 0, 0, 128)
     love.graphics.rectangle('fill', VIRTUAL_WIDTH / 2 - 76, VIRTUAL_HEIGHT / 2 + y - 11, 150, 58, 6)
 
     -- draw MATCH 3 text shadows
@@ -166,7 +166,7 @@ end
 function StartState:drawOptions(y)
     
     -- draw rect behind start and quit game text
-    love.graphics.setColor(255, 255, 255, 128)
+    love.graphics.setColor(0, 0, 0, 128)
     love.graphics.rectangle('fill', VIRTUAL_WIDTH / 2 - 76, VIRTUAL_HEIGHT / 2 + y, 150, 58, 6)
 
     -- draw Start text

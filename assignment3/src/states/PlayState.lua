@@ -257,7 +257,7 @@ function PlayState:render()
     love.graphics.setColor(56, 56, 56, 234)
     love.graphics.rectangle('fill', 16, 16, 186, 116, 4)
 
-    love.graphics.setColor(99, 155, 255, 255)
+    love.graphics.setColor(0, 0, 0, 255)
     love.graphics.setFont(gFonts['medium'])
     love.graphics.printf('Level: ' .. tostring(self.level), 20, 24, 182, 'center')
     love.graphics.printf('Score: ' .. tostring(self.score), 20, 52, 182, 'center')
