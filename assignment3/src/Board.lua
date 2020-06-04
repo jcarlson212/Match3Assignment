@@ -25,7 +25,7 @@ end
 
 function Board:generateTitles()
     self.tiles = {}
-
+    local start = math.random(12)
     for tileY = 1, 8 do
         
         -- empty table that will serve as a new row
@@ -34,7 +34,7 @@ function Board:generateTitles()
         for tileX = 1, 8 do
             
             -- create a new tile at X,Y with a random color and variety
-            table.insert(self.tiles[tileY], Tile(tileX, tileY, math.random(18), math.random(math.min(self.level, 6))))
+            table.insert(self.tiles[tileY], Tile(tileX, tileY, start + math.random(6), math.random(math.min(self.level, 6))))
         end
     end
 
@@ -44,6 +44,15 @@ function Board:generateTitles()
         -- a matchless board on start
         self:generateTitles(self.level)
     end
+end
+
+
+function Board:hasNoMatches()
+    return false
+end
+
+function Board:reset()
+    self.generateTitles()
 end
 
 --[[
